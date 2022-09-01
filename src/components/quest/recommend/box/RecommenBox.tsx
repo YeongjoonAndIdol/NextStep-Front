@@ -6,7 +6,7 @@ import offHeart from "../../../../assets/imgs/quest/offHeart.svg";
 const RecommenBox = () => {
   return (
     <Wrapper>
-      <QuestName>서울대생 하루 루틴</QuestName>
+      <QuestName>Next Step 운영자 하루 루틴</QuestName>
       <HeartBox>
         <img id="heart" src={onHeart} alt="heartBtn" />
         <LikeCount>512</LikeCount>
@@ -18,8 +18,6 @@ const RecommenBox = () => {
 const Wrapper = styled.div`
   width: 100%;
   height: 66px;
-  padding-left: 30px;
-  padding-right: 34px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,20 +27,23 @@ const QuestName = styled.div`
   color: ${({ theme }) => theme.color.bg_color_off};
   font-size: ${({ theme }) => theme.font_size.SF_Pro16};
   font-weight: 590;
+  padding-left: 30px;
 `;
 
 const HeartBox = styled.div`
   display: flex;
+  justify-content: space-between;
   > img {
     width: 26px;
     height: 26px;
+    padding-right: 18px;
   }
 `;
 
 const LikeCount = styled.div`
   color: ${({ theme }) => theme.color.bg_color_off};
   font-size: ${({ theme }) => theme.font_size.SF_Pro16};
-  padding-left: 18px;
+  padding-right: 34px;
 `;
 
 export default RecommenBox;
