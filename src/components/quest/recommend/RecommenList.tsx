@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import RecommenBox from "../box/RecommenBox";
-import arrow from "../../../../assets/imgs/common/leftArrow.svg";
-import magnifier from "../../../../assets/imgs/common/magnifier.svg";
+import RecommenBox from "./RecommenBox";
+import arrow from "../../../assets/imgs/common/leftArrow.svg";
+import magnifier from "../../../assets/imgs/common/magnifier.svg";
 
 const RecommenList = () => {
   return (
@@ -14,6 +14,17 @@ const RecommenList = () => {
       </Header>
       <Body>
         <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
+        <RecommenBox />
       </Body>
     </Wrapper>
   );
@@ -21,6 +32,7 @@ const RecommenList = () => {
 
 const Wrapper = styled.div`
   padding-top: 10px;
+  padding-bottom: 73px;
 `;
 
 const Header = styled.div`

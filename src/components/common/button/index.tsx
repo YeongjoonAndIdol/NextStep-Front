@@ -2,6 +2,7 @@ import React, { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
+  width: number;
   height: number;
 }
 
@@ -9,9 +10,9 @@ const Button = ({ type = "button", ...props }: Props) => {
   return <DefaultBtn type={type} {...props} />;
 };
 
-const DefaultBtn = styled.input<{ height: number }>`
+const DefaultBtn = styled.input<{ width: number; height: number }>`
   cursor: pointer;
-  width: 100%;
+  width: ${({ width }) => (width ? `${width}px` : `100%`)};
   height: ${({ height }) => (height ? `${height}px` : `100%`)};
   padding: 0 16px;
   background-color: ${({ theme }) => theme.color.main};

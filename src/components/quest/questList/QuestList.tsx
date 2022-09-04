@@ -15,7 +15,7 @@ const QuestList = () => {
       </Header>
       <Body>
         <QuestBox />
-        <Button height={54} value="추천 퀘스트" />
+        <Button width={396} height={54} value="추천 퀘스트" />
       </Body>
     </Wrapper>
   );
@@ -28,10 +28,10 @@ const Wrapper = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  > #arrow {
+  #arrow {
     padding-left: 31px;
   }
-  > #plus {
+  #plus {
     padding-right: 31px;
   }
   > div {
@@ -42,11 +42,13 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
+  display: flex;
+  justify-content: center;
   padding-top: 56px;
   padding-bottom: 10px;
   > input {
     position: fixed;
-    top: 760px;
+    top: 820px;
   }
 `;
 

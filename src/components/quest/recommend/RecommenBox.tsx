@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import onHeart from "../../../../assets/imgs/quest/onHeart.svg";
-import offHeart from "../../../../assets/imgs/quest/offHeart.svg";
+import onHeart from "../../../assets/imgs/quest/onHeart.svg";
+import offHeart from "../../../assets/imgs/quest/offHeart.svg";
 
 const RecommenBox = () => {
   return (
@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 `;
 
 const QuestName = styled.div`
@@ -34,8 +35,8 @@ const HeartBox = styled.div`
   display: flex;
   justify-content: space-between;
   > img {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     padding-right: 18px;
   }
 `;
