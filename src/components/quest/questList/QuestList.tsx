@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import QuestBox from "./QuestBox";
-import vector from "../../../assets/imgs/common/vector.svg";
+import arrow from "../../../assets/imgs/common/leftArrow.svg";
 import plus from "../../../assets/imgs/common/plus.svg";
 import Button from "../../common/button";
 
 const QuestList = () => {
   return (
     <Wrapper>
-      <Haeder>
-        <img id="vector" src={vector} alt="vector" />
-        <div className="haederName">퀘스트 목록</div>
+      <Header>
+        <img id="arrow" src={arrow} alt="leftArrow" />
+        <div className="headerName">퀘스트 목록</div>
         <img id="plus" src={plus} alt="plus" />
-      </Haeder>
+      </Header>
       <Body>
         <QuestBox />
         <Button height={54} value="추천 퀘스트" />
@@ -25,10 +25,10 @@ const Wrapper = styled.div`
   padding-top: 10px;
 `;
 
-const Haeder = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  > #vector {
+  > #arrow {
     padding-left: 31px;
   }
   > #plus {
