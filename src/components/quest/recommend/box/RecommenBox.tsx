@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import onHeart from "../../../assets/imgs/quest/onHeart.svg";
-import offHeart from "../../../assets/imgs/quest/offHeart.svg";
+import onHeart from "../../../../assets/imgs/quest/onHeart.svg";
+import offHeart from "../../../../assets/imgs/quest/offHeart.svg";
 
 const RecommenBox = () => {
   return (
@@ -44,6 +44,7 @@ const HeartBox = styled.div`
 const LikeCount = styled.div`
   color: ${({ theme }) => theme.color.bg_color_off};
   font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+  font-weight: 590;
   padding-right: 34px;
 `;
 
