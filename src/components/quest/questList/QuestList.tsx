@@ -3,8 +3,8 @@ import styled from "styled-components";
 import QuestBox from "./QuestBox";
 import arrow from "../../../assets/imgs/common/leftArrow.svg";
 import plus from "../../../assets/imgs/common/plus.svg";
-import Button from "../../common/button";
-
+import { Link } from "react-router-dom";
+import BottomFixedBtn from "../../common/BottomFixedBtn";
 const QuestList = () => {
   return (
     <Wrapper>
@@ -15,24 +15,28 @@ const QuestList = () => {
       </Header>
       <Body>
         <QuestBox />
-        <Button width={396} height={54} value="추천 퀘스트" />
       </Body>
+      <Link to="/recommen">
+        <BottomFixedBtn height={54} value="추천 퀘스트" />
+      </Link>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
   #arrow {
-    padding-left: 31px;
+    padding-left: 15px;
   }
   #plus {
-    padding-right: 31px;
+    padding-right: 15px;
   }
   > div {
     color: ${({ theme }) => theme.color.bg_color_off};
@@ -42,14 +46,10 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   padding-top: 56px;
-  padding-bottom: 10px;
-  > input {
-    position: fixed;
-    top: 820px;
-  }
 `;
 
 export default QuestList;
