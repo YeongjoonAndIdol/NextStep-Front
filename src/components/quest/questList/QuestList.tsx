@@ -27,6 +27,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 20px;
 `;
 
 const Header = styled.div`

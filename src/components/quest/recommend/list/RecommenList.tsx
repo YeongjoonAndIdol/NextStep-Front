@@ -31,8 +31,7 @@ const RecommenList = () => {
 };
 
 const Wrapper = styled.div`
-  padding-top: 10px;
-  padding-bottom: 70px;
+  padding-top: 20px;
 `;
 
 const Header = styled.div`
@@ -52,7 +51,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  padding-top: 56px;
+  padding-top: 45px;
   padding-bottom: 10px;
 `;
 

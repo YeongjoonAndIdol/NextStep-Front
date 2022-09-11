@@ -24,10 +24,10 @@ const Wrapper = styled.div`
     color: ${({ theme }) => theme.color.bg_color_off};
     font-size: ${({ theme }) => theme.font_size.SF_Pro16};
     font-weight: 590;
-    padding-left: 30px;
+    padding-left: 14px;
   }
   > img {
-    padding-right: 52px;
+    padding-right: 37px;
   }
 `;
 

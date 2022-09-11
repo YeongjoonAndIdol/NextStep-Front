@@ -17,7 +17,7 @@ const RecommenBox = () => {
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 66px;
+  height: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
