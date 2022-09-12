@@ -63,7 +63,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 56px;
+  padding-top: 36px;
 `;
 
 export default QuestList;

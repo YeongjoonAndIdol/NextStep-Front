@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import checkImg from "../../../assets/imgs/time/check.svg";
-import timeImg from "../../../assets/imgs/time/time.svg";
+import X from "../../assets/imgs/search/x.svg";
 
-const QuestBox = () => {
+const SearchBox = () => {
   return (
     <Wrapper>
-      <div>길에 떨어진 쓰레기 하나 줍기</div>
-      <img src={checkImg} alt="logo" />
+      <div>서울대생 하루 루틴</div>
+      <img src={X} alt="x" />
     </Wrapper>
   );
 };
@@ -22,11 +21,11 @@ const Wrapper = styled.div`
     color: ${({ theme }) => theme.color.bg_color_off};
     font-size: ${({ theme }) => theme.font_size.SF_Pro16};
     font-weight: 590;
-    padding-left: 16px;
+    padding-left: 20px;
   }
   > img {
-    padding-right: 37px;
+    padding-right: 26px;
   }
 `;
 
-export default QuestBox;
+export default SearchBox;

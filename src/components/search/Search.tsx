@@ -2,9 +2,11 @@ import { useState } from "react";
 import styled from "styled-components";
 import arrow from "../../assets/imgs/common/leftArrow.svg";
 import magnifier from "../../assets/imgs/common/magnifier.svg";
+import SearchBox from "./SearchBox";
 
 const Search = () => {
   const [onFocus, setOnFocus] = useState<boolean>(false);
+  const [onHistory, setOnHistory] = useState<boolean>(false);
 
   const HandleFocusInput = () => {
     setOnFocus(!onFocus);
@@ -30,6 +32,17 @@ const Search = () => {
         />
         <img src={onFocus ? `${magnifier}` : ``} alt="" />
       </InputDiv>
+      <Body>
+        {onHistory ? (
+          <div className="OnHistory">
+            <SearchBox />
+          </div>
+        ) : (
+          <div className="OffHistory">
+            <p>검색하신 기록이 없습니다.</p>
+          </div>
+        )}
+      </Body>
     </Wrapper>
   );
 };
@@ -79,6 +92,24 @@ const InputDiv = styled.div`
     border: none;
     outline: none;
     background-color: ${({ theme }) => theme.color.gray_color2};
+  }
+`;
+
+const Body = styled.div`
+  .OnHistory {
+    padding-top: 17px;
+  }
+  .OffHistory {
+    height: 66px;
+    padding-top: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > p {
+      color: ${({ theme }) => theme.color.sub_color2};
+      font-size: ${({ theme }) => theme.font_size.SF_Pro14};
+      font-weight: 590;
+    }
   }
 `;
 
