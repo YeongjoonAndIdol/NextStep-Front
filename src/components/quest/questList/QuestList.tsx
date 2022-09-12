@@ -15,6 +15,18 @@ const QuestList = () => {
       </Header>
       <Body>
         <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
+        <QuestBox />
       </Body>
       <Link to="/recommen">
         <BottomFixedBtn height={54} value="추천 퀘스트" />
@@ -49,6 +61,7 @@ const Header = styled.div`
 const Body = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 56px;
 `;

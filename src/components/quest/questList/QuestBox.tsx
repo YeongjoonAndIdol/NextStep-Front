@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     color: ${({ theme }) => theme.color.bg_color_off};
     font-size: ${({ theme }) => theme.font_size.SF_Pro16};
     font-weight: 590;
-    padding-left: 14px;
+    padding-left: 16px;
   }
   > img {
     padding-right: 37px;
