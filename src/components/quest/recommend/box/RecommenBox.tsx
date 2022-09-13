@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import onHeart from "../../../../assets/imgs/quest/onHeart.svg";
 import offHeart from "../../../../assets/imgs/quest/offHeart.svg";

@@ -1,10 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import RecommenBox from "../box/RecommenBox";
 import arrow from "../../../../assets/imgs/common/leftArrow.svg";
 import magnifier from "../../../../assets/imgs/common/magnifier.svg";
+import RecommenModal from "../modal/RecommenModal";
 
 const RecommenList = () => {
+  const [isModal, setIsModal] = useState<boolean>(true);
+
+  const onClickModal = () => {
+    setIsModal(true);
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -13,15 +20,22 @@ const RecommenList = () => {
         <img id="magnifier" src={magnifier} alt="magnifier" />
       </Header>
       <Body>
-        <RecommenBox />
+        {isModal ? (
+          <RecommenModal setIsModal={setIsModal} />
+        ) : (
+          <>
+            <RecommenBox />
+            <RecommenBox />
+            <RecommenBox />
+            <RecommenBox />
+          </>
+        )}
       </Body>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
-  padding-top: 20px;
-`;
+const Wrapper = styled.div``;
 
 const Header = styled.div`
   display: flex;
