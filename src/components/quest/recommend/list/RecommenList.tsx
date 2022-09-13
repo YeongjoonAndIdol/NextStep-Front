@@ -6,11 +6,7 @@ import magnifier from "../../../../assets/imgs/common/magnifier.svg";
 import RecommenModal from "../modal/RecommenModal";
 
 const RecommenList = () => {
-  const [isModal, setIsModal] = useState<boolean>(true);
-
-  const onClickModal = () => {
-    setIsModal(true);
-  };
+  const [isModal, setIsModal] = useState<boolean>(false);
 
   return (
     <Wrapper>
@@ -21,7 +17,7 @@ const RecommenList = () => {
       </Header>
       <Body>
         {isModal ? (
-          <RecommenModal setIsModal={setIsModal} />
+          <RecommenModal />
         ) : (
           <>
             <RecommenBox />
