@@ -14,17 +14,6 @@ const RecommenList = () => {
       </Header>
       <Body>
         <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
-        <RecommenBox />
       </Body>
     </Wrapper>
   );
