@@ -1,14 +1,25 @@
+import { FC, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import BottomFixedBtn from "../../../common/BottomFixedBtn";
 import ModalInItem from "./ModalInItem";
 import PurpleX from "../../../../assets/imgs/quest/purpleX.svg";
 
-const RecommenModal = () => {
+interface Props {
+  setIsModal: Dispatch<SetStateAction<boolean>>;
+}
+
+const RecommenModal: FC<Props> = ({ setIsModal }) => {
   return (
     <Wrapper>
       <ModalHeader>
         <div>서울대생 하루 루틴</div>
-        <img src={PurpleX} alt="x" />
+        <img
+          src={PurpleX}
+          onClick={() => {
+            setIsModal(false);
+          }}
+          alt="x"
+        />
       </ModalHeader>
       <ModalBody>
         <ModalInItem />
