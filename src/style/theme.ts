@@ -1,17 +1,18 @@
 export const theme = {
   color: {
-    main: "#DF60FF",
+    main: "#FFB55D",
 
-    sub_color1: "#E682FF",
-    sub_color2: "#ECA2FF",
-    sub_color3: "#F3C6FF",
+    sub_color1: "#9AFF5D",
+    sub_color2: "#E64DFF",
+    sub_color3: "#5DE2FF",
     sub_color4: "#F9E0FF",
+    sub_color5: "#FF8E8E",
 
     bg_color_on: "#FDF9FE",
-    bg_color_off: "#343434",
+    bg_color_off: "#343434", // 나중에 퍼블리싱 때 삭제할 color
 
     surface_color: "#FFFFFF",
-    surface_color2: "#DF60FF",
+    surface_color2: "#FFB55D",
 
     disabled_color: "#B3B3B3",
     empty_place_color: "#F5F5F5",
