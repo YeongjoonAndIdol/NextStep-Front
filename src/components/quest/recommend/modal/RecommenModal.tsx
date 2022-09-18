@@ -2,7 +2,7 @@ import { FC, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import BottomFixedBtn from "../../../common/BottomFixedBtn";
 import ModalInItem from "./ModalInItem";
-import PurpleX from "../../../../assets/imgs/quest/purpleX.svg";
+import YellowX from "../../../../assets/imgs/quest/yellowX.svg";
 
 interface Props {
   setIsModal: Dispatch<SetStateAction<boolean>>;
@@ -14,17 +14,19 @@ const RecommenModal: FC<Props> = ({ setIsModal }) => {
       <ModalHeader>
         <div>서울대생 하루 루틴</div>
         <img
-          src={PurpleX}
+          src={YellowX}
           onClick={() => {
             setIsModal(false);
           }}
-          alt="x"
+          alt='x'
         />
       </ModalHeader>
       <ModalBody>
         <ModalInItem />
+        <ModalInItem />
+        <ModalInItem />
       </ModalBody>
-      <BottomFixedBtn height={54} value="루틴 사용하기" />
+      <BottomFixedBtn height={54} value='루틴 사용하기' />
     </Wrapper>
   );
 };
