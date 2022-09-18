@@ -45,7 +45,11 @@ const MyPage = () => {
           </div>
         </StateBox>
       </StateWrapper>
-      <ImgWrapper></ImgWrapper>
+      <ImgWrapper>
+        <img id='book' src={book} alt='img' />
+        <img id='news' src={news} alt='img' />
+        <img id='baseball' src={baseball} alt='img' />
+      </ImgWrapper>
     </Wrapper>
   );
 };
@@ -170,6 +174,20 @@ const StateBox = styled.div`
   }
 `;
 
-const ImgWrapper = styled.div``;
+const ImgWrapper = styled.div`
+  position: relative;
+  #book {
+    position: fixed;
+  }
+  #news {
+    position: fixed;
+    top: 530px;
+    right: 0;
+  }
+  #baseball {
+    position: fixed;
+    bottom: 100px;
+  }
+`;
 
 export default MyPage;
