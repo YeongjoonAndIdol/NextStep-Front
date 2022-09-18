@@ -19,26 +19,26 @@ const Search = () => {
   return (
     <Wrapper>
       <Header>
-        <img id="arrow" src={arrow} alt="leftArrow" />
-        <div className="headerName">검색</div>
+        <img id='arrow' src={arrow} alt='leftArrow' />
+        <div className='headerName'>검색</div>
       </Header>
       <InputDiv>
         <input
-          name="search"
+          name='search'
           className={onFocus ? "FocusInput" : "BlurInput"}
           placeholder={onFocus ? "" : "검색하실 언어를 입력해주세요."}
           onFocus={HandleFocusInput}
           onBlur={HandleBlurInput}
         />
-        <img src={onFocus ? `${magnifier}` : ``} alt="" />
+        <img src={onFocus ? `${magnifier}` : ``} alt='' />
       </InputDiv>
       <Body>
         {onHistory ? (
-          <div className="OnHistory">
+          <div className='OnHistory'>
             <SearchBox />
           </div>
         ) : (
-          <div className="OffHistory">
+          <div className='OffHistory'>
             <p>검색하신 기록이 없습니다.</p>
           </div>
         )}
@@ -106,7 +106,7 @@ const Body = styled.div`
     justify-content: center;
     align-items: center;
     > p {
-      color: ${({ theme }) => theme.color.sub_color2};
+      color: ${({ theme }) => theme.color.main};
       font-size: ${({ theme }) => theme.font_size.SF_Pro14};
       font-weight: 590;
     }
