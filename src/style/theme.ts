@@ -21,7 +21,7 @@ export const theme = {
     gray_color2: "#EDEDED",
     gray_color3: "#B7B7B7",
     gray_color4: "#D9D9D9",
-    gray_color5: "#F5F5F5",
+    gray_color5: "#F4F4F4",
 
     error_color: "#FF6464",
   },
