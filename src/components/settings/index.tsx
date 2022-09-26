@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import leftArrow from "../../assets/imgs/common/leftArrow.svg";
+import MyQuest from "./MyQuest";
 import QuestMold from "./QuestMold";
 
 const Settings = () => {
@@ -26,6 +27,10 @@ const Settings = () => {
           <p id='restart'>튜토리얼 재진행</p>
           <p id='start'>시작</p>
         </TutorialDiv>
+        <MyQuestDiv>
+          <p id='title'>나의 퀘스트</p>
+          <MyQuest />
+        </MyQuestDiv>
         <LogOutDiv>
           <p>로그아웃</p>
         </LogOutDiv>
@@ -122,6 +127,19 @@ const TutorialDiv = styled.div`
     font-size: ${({ theme }) => theme.font_size.SF_Pro14};
     font-weight: 400;
     color: ${({ theme }) => theme.color.bg_color_off};
+  }
+`;
+
+const MyQuestDiv = styled.div`
+  background-color: ${({ theme }) => theme.color.gray_color5};
+  width: 340px;
+  border-radius: 10px;
+  padding: 14px;
+  #title {
+    margin: 0;
+    font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+    font-weight: 400;
+    color: black;
   }
 `;
 
