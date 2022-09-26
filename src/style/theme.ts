@@ -9,7 +9,7 @@ export const theme = {
     sub_color5: "#FF8E8E",
 
     bg_color_on: "#FDF9FE",
-    bg_color_off: "#343434", // 나중에 퍼블리싱 때 삭제할 color
+    bg_color_off: "#343434",
 
     surface_color: "#FFFFFF",
     surface_color2: "#FFB55D",
