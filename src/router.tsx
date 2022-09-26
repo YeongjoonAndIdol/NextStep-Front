@@ -18,7 +18,7 @@ const Router = () => {
         <Route path='/mypage' element={<PageMyPage />} />
         <Route path='/ranking' element={<RankingPage />} />
         <Route path='/setting' element={<SettingPage />} />
-        <Route path='/Achievement' element={<AchievementPage />} />
+        <Route path='/achievement' element={<AchievementPage />} />
       </Routes>
     </BrowserRouter>
   );
