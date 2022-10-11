@@ -4,6 +4,7 @@ import leftArrow from "../../assets/imgs/common/leftArrow.svg";
 import recall from "../../assets/imgs/Achievement/recall.svg";
 import Week from "./Week";
 import AchievementBox from "./AchievementBox";
+import { Category } from "../../interface/category";
 
 const Achievement = () => {
   return (

@@ -5,8 +5,8 @@ export const theme = {
     sub_color1: "#9AFF5D",
     sub_color2: "#E64DFF",
     sub_color3: "#5DE2FF",
-    sub_color4: "#F9E0FF",
-    sub_color5: "#FF8E8E",
+    sub_color4: "#FF8E8E",
+    sub_color5: "#88FFDB",
 
     bg_color_on: "#FDF9FE",
     bg_color_off: "#343434",
