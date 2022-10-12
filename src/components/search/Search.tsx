@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-import arrow from "../../assets/imgs/common/leftArrow.svg";
 import magnifier from "../../assets/imgs/common/magnifier.svg";
 import SearchBox from "./SearchBox";
 
@@ -18,10 +17,6 @@ const Search = () => {
 
   return (
     <Wrapper>
-      <Header>
-        <img id='arrow' src={arrow} alt='leftArrow' />
-        <div className='headerName'>검색</div>
-      </Header>
       <InputDiv>
         <input
           name='search'
@@ -51,24 +46,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 20px;
-`;
-
-const Header = styled.div`
-  display: flex;
-  #arrow {
-    padding-left: 15px;
-  }
-  > div {
-    color: ${({ theme }) => theme.color.bg_color_off};
-    font-size: ${({ theme }) => theme.font_size.SF_Pro18};
-    font-weight: 590;
-    padding-left: 166px;
-  }
 `;
 
 const InputDiv = styled.div`
-  padding-top: 23px;
   display: flex;
   justify-content: center;
   > img {

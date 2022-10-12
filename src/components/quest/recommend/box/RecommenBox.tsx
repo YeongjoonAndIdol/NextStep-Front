@@ -1,22 +1,13 @@
-import { FC, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import onHeart from "../../../../assets/imgs/quest/onHeart.svg";
 import offHeart from "../../../../assets/imgs/quest/offHeart.svg";
 
-interface Props {
-  setIsModal: Dispatch<SetStateAction<boolean>>;
-}
-
-const RecommenBox: FC<Props> = ({ setIsModal }) => {
+const RecommenBox = () => {
   return (
-    <Wrapper
-      onClick={() => {
-        setIsModal(true);
-      }}
-    >
+    <Wrapper>
       <QuestName>Next Step 운영자 하루 루틴</QuestName>
       <HeartBox>
-        <img id="heart" src={onHeart} alt="heartBtn" />
+        <img id='heart' src={onHeart} alt='heartBtn' />
         <LikeCount>512</LikeCount>
       </HeartBox>
     </Wrapper>

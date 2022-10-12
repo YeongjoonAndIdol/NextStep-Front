@@ -1,16 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import leftArrow from "../../assets/imgs/common/leftArrow.svg";
 import MyQuest from "./MyQuest";
 import QuestMold from "./QuestMold";
 
 const Settings = () => {
   return (
     <Wrapper>
-      <Header>
-        <img id='exit' src={leftArrow} alt='exit' />
-        <div className='title'>설정</div>
-      </Header>
       <MenuWrapper>
         <NameDiv>
           <p id='name'>이름</p>
@@ -40,18 +35,6 @@ const Settings = () => {
 };
 
 const Wrapper = styled.div``;
-
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 25px 31px 90px;
-  .title {
-    padding-left: 150px;
-    font-size: ${({ theme }) => theme.font_size.SF_Pro20};
-    font-weight: 590;
-    color: ${({ theme }) => theme.color.bg_color_off};
-  }
-`;
 
 const MenuWrapper = styled.div`
   display: flex;

@@ -1,25 +1,14 @@
-import { FC, Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import BottomFixedBtn from "../../../common/BottomFixedBtn";
 import ModalInItem from "./ModalInItem";
 import YellowX from "../../../../assets/imgs/quest/yellowX.svg";
 
-interface Props {
-  setIsModal: Dispatch<SetStateAction<boolean>>;
-}
-
-const RecommenModal: FC<Props> = ({ setIsModal }) => {
+const RecommenModal = () => {
   return (
     <Wrapper>
       <ModalHeader>
         <div>서울대생 하루 루틴</div>
-        <img
-          src={YellowX}
-          onClick={() => {
-            setIsModal(false);
-          }}
-          alt='x'
-        />
+        <img src={YellowX} alt='x' />
       </ModalHeader>
       <ModalBody>
         <ModalInItem />
