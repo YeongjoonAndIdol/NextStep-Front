@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import setting from "../../assets/imgs/mypage/setting.svg";
-import book from "../../assets/imgs/mypage/book.svg";
 import news from "../../assets/imgs/mypage/news.svg";
 import baseball from "../../assets/imgs/mypage/baseball.svg";
+import MyQuest from "./MyQuest";
 
 const MyPage = () => {
   return (
@@ -37,18 +37,23 @@ const MyPage = () => {
             </div>
           </StateBox>
         </div>
-        <StateBox>
-          <p id='title'>내 순위</p>
-          <div className='state'>
-            <p id='yellow'>99</p>
-            <p id='gray'>위</p>
-          </div>
-        </StateBox>
+        <div className='Ranking'>
+          <StateBox>
+            <p id='title'>내 순위</p>
+            <div className='state'>
+              <p id='yellow'>99</p>
+              <p id='gray'>위</p>
+            </div>
+          </StateBox>
+        </div>
+        <MyQuestDiv>
+          <p id='title'>나의 루틴</p>
+          <MyQuest />
+        </MyQuestDiv>
       </StateWrapper>
       <ImgWrapper>
-        <img id='book' src={book} alt='img' />
-        <img id='news' src={news} alt='img' />
         <img id='baseball' src={baseball} alt='img' />
+        <img id='news' src={news} alt='img' />
       </ImgWrapper>
     </Wrapper>
   );
@@ -141,6 +146,9 @@ const StateWrapper = styled.div`
   .Interval {
     padding-bottom: 20px;
   }
+  .Ranking {
+    padding-bottom: 20px;
+  }
 `;
 
 const StateBox = styled.div`
@@ -174,19 +182,30 @@ const StateBox = styled.div`
   }
 `;
 
+const MyQuestDiv = styled.div`
+  background-color: ${({ theme }) => theme.color.gray_color5};
+  width: 360px;
+  border-radius: 10px;
+  padding: 14px;
+  #title {
+    margin: 0;
+    font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+    font-weight: 400;
+    color: black;
+  }
+`;
+
 const ImgWrapper = styled.div`
   position: relative;
-  #book {
-    position: fixed;
-  }
   #news {
     position: fixed;
-    top: 530px;
-    right: 0;
+    bottom: 90px;
+    left: 0;
   }
   #baseball {
     position: fixed;
     bottom: 100px;
+    right: 0;
   }
 `;
 
