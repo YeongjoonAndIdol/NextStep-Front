@@ -36,7 +36,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Check types
         run: |
-          tsc
+          tsc -p tsconfig.json --noEmit
     
   enable-yarn-cashe: # yarn casheing
     runs-on: ubuntu-latest
