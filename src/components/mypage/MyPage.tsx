@@ -62,7 +62,7 @@ const MyPage = () => {
 const Wrapper = styled.div``;
 
 const Header = styled.div`
-  padding: 37px 46px 52px 40px;
+  padding: 0 46px 52px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
