@@ -7,9 +7,9 @@ import bronze from "../../assets/imgs/ranking/bronze.svg";
 const MyRanking = () => {
   return (
     <MyRankingWrapper>
-      <MyRankingNum>99등</MyRankingNum>
-      <MyRankingName>전영준</MyRankingName>
-      <MyRankingLevel>100Lv.</MyRankingLevel>
+      <p id='ranking'>100등</p>
+      <p id='name'>전영준</p>
+      <p id='level'>500Lv.</p>
     </MyRankingWrapper>
   );
 };
@@ -55,31 +55,27 @@ const Wrapper = styled.div``;
 // MyRanking Style
 const MyRankingWrapper = styled.div`
   width: 100%;
-  height: 20px;
-  padding: 16px 28px;
+  height: 54px;
   background-color: ${({ theme }) => theme.color.main};
   display: flex;
   align-items: center;
-`;
-
-const MyRankingNum = styled.div`
-  padding-right: 15px;
-  font-size: ${({ theme }) => theme.font_size.SF_Pro14};
-  font-weight: 590;
-  color: ${({ theme }) => theme.color.surface_color};
-`;
-
-const MyRankingName = styled.div`
-  padding-right: 230px;
-  font-size: ${({ theme }) => theme.font_size.SF_Pro16};
-  font-weight: 590;
-  color: ${({ theme }) => theme.color.surface_color};
-`;
-
-const MyRankingLevel = styled.div`
-  font-size: ${({ theme }) => theme.font_size.SF_Pro16};
-  font-weight: 590;
-  color: ${({ theme }) => theme.color.surface_color};
+  #ranking {
+    padding: 0 25px 0 18px;
+    font-size: ${({ theme }) => theme.font_size.SF_Pro14};
+    font-weight: 590;
+    color: ${({ theme }) => theme.color.bg_color_on};
+  }
+  #name {
+    padding-right: 226px;
+    font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+    font-weight: 590;
+    color: ${({ theme }) => theme.color.bg_color_on};
+  }
+  #level {
+    font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+    font-weight: 590;
+    color: ${({ theme }) => theme.color.bg_color_on};
+  }
 `;
 
 // Ranking Styleß
