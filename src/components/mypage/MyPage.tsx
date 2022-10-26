@@ -199,12 +199,12 @@ const ImgWrapper = styled.div`
   position: relative;
   #news {
     position: fixed;
-    bottom: 56px;
+    bottom: 7px;
     left: 0;
   }
   #baseball {
     position: fixed;
-    bottom: 66px;
+    bottom: 17px;
     right: 0;
   }
 `;

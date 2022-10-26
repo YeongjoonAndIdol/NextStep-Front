@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import SettingPage from "./pages/settings/SettingPage";
 import PageMyPage from "./pages/mypage/PageMyPage";
