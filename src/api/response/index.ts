@@ -38,15 +38,15 @@ export interface IGetMySetting {
   liked_quest: LikedQuest[];
 }
 
+export interface QuestList {
+  id: string;
+  quest_name: string;
+  is_liked: boolean;
+  like_count: number;
+}
+
 export interface IGetRecommendList {
-  recomend_quest: [
-    {
-      id: string;
-      name: string;
-      is_liked: boolean;
-      like_count: number;
-    }
-  ];
+  recomend_quest: QuestList[];
 }
 
 export interface IGetAchievement {

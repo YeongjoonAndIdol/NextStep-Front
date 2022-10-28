@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import onHeart from "../../../../assets/imgs/quest/onHeart.svg";
 import offHeart from "../../../../assets/imgs/quest/offHeart.svg";
+import { QuestList } from "../../../../api/response";
 
-const RecommenBox = () => {
+const RecommenBox = ({ id, is_liked, like_count, quest_name }: QuestList) => {
   return (
     <Wrapper>
       <QuestName>Next Step 운영자 하루 루틴</QuestName>
