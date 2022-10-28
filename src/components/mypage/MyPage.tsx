@@ -16,7 +16,7 @@ const MyPage = () => {
     ranking: 0,
     my_routin: [
       {
-        id: 0,
+        id: "",
         routin_name: "",
       },
     ],
@@ -71,8 +71,8 @@ const MyPage = () => {
         </div>
         <MyQuestDiv>
           <p id='title'>나의 루틴</p>
-          {data.my_routin.map((data, idx) => (
-            <MyQuest id={idx} routin_name={data.routin_name} />
+          {data.my_routin.map(data => (
+            <MyQuest id={data.id} routin_name={data.routin_name} />
           ))}
         </MyQuestDiv>
       </StateWrapper>

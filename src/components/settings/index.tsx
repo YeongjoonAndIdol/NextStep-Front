@@ -1,21 +1,34 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import QuestMold from "./QuestMold";
+import { IGetMySetting } from "../../api/response/index";
+import { GetMySetting } from "../../api";
 
 const Settings = () => {
+  const [data, setData] = useState<IGetMySetting>({
+    name: "",
+    liked_quest: [{ id: "", liked_name: "" }],
+  });
+
+  useEffect(() => {
+    GetMySetting().then(res => setData(res));
+  }, []);
+
   return (
     <Wrapper>
       <MenuWrapper>
         <NameDiv>
           <p id='name'>이름</p>
-          <p id='userName'>장석연</p>
+          <p id='userName'>{data.name}</p>
         </NameDiv>
         <QuestDiv>
           <QuestHeader>
             <p id='title'>내가 좋아요한 퀘스트</p>
-            <p id='number'>1개</p>
+            <p id='number'>{data.liked_quest.length}개</p>
           </QuestHeader>
-          <QuestMold />
+          {data.liked_quest.map(data => (
+            <QuestMold id={data.id} liked_name={data.liked_name} />
+          ))}
         </QuestDiv>
         <TutorialDiv>
           <p id='restart'>튜토리얼 재진행</p>

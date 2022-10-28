@@ -15,7 +15,7 @@ export interface IGetRanking {
 }
 
 export interface MyRoutin {
-  id: number;
+  id: string;
   routin_name: string;
 }
 
@@ -28,14 +28,14 @@ export interface IGetMyPage {
   my_routin: MyRoutin[];
 }
 
+export interface LikedQuest {
+  id: string;
+  liked_name: string;
+}
+
 export interface IGetMySetting {
   name: string;
-  liked_quest: [
-    {
-      id: string;
-      name: string;
-    }
-  ];
+  liked_quest: LikedQuest[];
 }
 
 export interface IGetRecommendList {
