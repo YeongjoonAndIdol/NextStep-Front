@@ -1,10 +1,33 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import { IGetMyPage } from "../../api/response/index";
+import { GetMyPage } from "../../api/index";
 import setting from "../../assets/imgs/mypage/setting.svg";
 import news from "../../assets/imgs/mypage/news.svg";
 import baseball from "../../assets/imgs/mypage/baseball.svg";
 import MyQuest from "./MyQuest";
 
 const MyPage = () => {
+  const [data, setData] = useState<IGetMyPage>({
+    name: "",
+    level: 0,
+    exp: 0,
+    walk_count: 1000,
+    ranking: 0,
+    my_routin: [
+      {
+        id: 0,
+        routin_name: "",
+      },
+    ],
+  });
+
+  useEffect(() => {
+    GetMyPage().then(res => {
+      setData(res);
+    });
+  }, []);
+
   return (
     <Wrapper>
       <Header>
@@ -12,18 +35,18 @@ const MyPage = () => {
         <img src={setting} alt='setting' />
       </Header>
       <MyInformation>
-        <div className='UserName'>장석연님,</div>
+        <div className='UserName'>{data.name}님,</div>
         <div className='comment'>
           <CommentText>오늘</CommentText>
           <CommentYellow>성장</CommentYellow>
           <CommentText>많이 하셨나요?</CommentText>
         </div>
         <MyLevelDiv>
-          <p id='level'>Lv.100</p>
+          <p id='level'>Lv.{data.level}</p>
           <LevelParting>|</LevelParting>
-          <p id='exp'>123</p>
+          <p id='exp'>{data.level}</p>
           <ExpParting>/</ExpParting>
-          <p id='exp'>456</p>
+          <p id='exp'>100</p>
         </MyLevelDiv>
       </MyInformation>
       <HR />
@@ -32,7 +55,7 @@ const MyPage = () => {
           <StateBox>
             <p id='title'>걸음 수</p>
             <div className='state'>
-              <p id='yellow'>15245</p>
+              <p id='yellow'>{data.walk_count}</p>
               <p id='gray'>걸음</p>
             </div>
           </StateBox>
@@ -41,14 +64,16 @@ const MyPage = () => {
           <StateBox>
             <p id='title'>내 순위</p>
             <div className='state'>
-              <p id='yellow'>99</p>
+              <p id='yellow'>{data.ranking}</p>
               <p id='gray'>위</p>
             </div>
           </StateBox>
         </div>
         <MyQuestDiv>
           <p id='title'>나의 루틴</p>
-          <MyQuest />
+          {data.my_routin.map((data, idx) => (
+            <MyQuest id={idx} routin_name={data.routin_name} />
+          ))}
         </MyQuestDiv>
       </StateWrapper>
       <ImgWrapper>

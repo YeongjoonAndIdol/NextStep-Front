@@ -14,18 +14,18 @@ export interface IGetRanking {
   };
 }
 
+export interface MyRoutin {
+  id: number;
+  routin_name: string;
+}
+
 export interface IGetMyPage {
   name: string;
   level: number;
   exp: number;
   walk_count: number;
   ranking: number;
-  my_routin: [
-    {
-      id: number;
-      name: string;
-    }
-  ];
+  my_routin: MyRoutin[];
 }
 
 export interface IGetMySetting {

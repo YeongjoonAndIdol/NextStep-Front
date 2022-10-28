@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import menu from "../../assets/imgs/common/menu.svg";
+import { MyRoutin } from "../../api/response/index";
 
-const MyQuest = () => {
+const MyQuest = ({ id, routin_name }: MyRoutin) => {
   return (
     <Wrapper>
-      <p>광주 디자이너 하루 루틴</p>
+      <p>{routin_name}</p>
       <img src={menu} alt='*' />
     </Wrapper>
   );
