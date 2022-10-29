@@ -53,7 +53,7 @@ const InputDiv = styled.div`
   justify-content: center;
   > img {
     position: fixed;
-    top: 79px;
+    top: 10px;
     right: 25px;
     z-index: 99;
   }

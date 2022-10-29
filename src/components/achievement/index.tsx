@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Week from "./Week";
+import Week from "../common/Week";
 import AchievementBox from "./AchievementBox";
 import { Category } from "../../interface/category";
 
