@@ -1,21 +1,19 @@
 import styled from "styled-components";
+import { IGetReview } from "../../api/response";
 import menu from "../../assets/imgs/common/menu.svg";
 
-const ReviewBox = () => {
+const ReviewBox = ({ content, is_success }: IGetReview) => {
   return (
     <Wrapper>
-      <HeaderWrapper>
+      <HeaderWrapper isSuccess={is_success}>
         <div>
           <p id='date'>2022.9.15 (목)</p>
-          <p id='clear'>실패</p>
+          <p id='clear'>{is_success ? "성공" : "실패"}</p>
         </div>
         <img src={menu} alt='menu' />
       </HeaderWrapper>
       <ContentWrapper>
-        <Content>
-          비록 실패했지만 이 앱과 함께 저의 삶의 질을 높일 수 있어 뜻 깊은
-          경험이었습니다.
-        </Content>
+        <Content>{content}</Content>
       </ContentWrapper>
     </Wrapper>
   );
@@ -27,7 +25,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.div<{ isSuccess: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,7 +44,8 @@ const HeaderWrapper = styled.div`
     padding-left: 20px;
     font-weight: 590;
     font-size: ${({ theme }) => theme.font_size.SF_Pro14};
-    color: ${({ theme }) => theme.color.error_color};
+    color: ${({ theme, isSuccess }) =>
+      isSuccess ? theme.color.main : theme.color.error_color};
   }
 `;
 

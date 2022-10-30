@@ -5,6 +5,7 @@ import {
   IGetMySetting,
   IGetRanking,
   IGetRecommendList,
+  IGetReview,
   IGetSearch,
 } from "./response/index";
 
@@ -51,6 +52,14 @@ export const GetRecommendList = async (): Promise<IGetRecommendList> => {
 export const Search = async (): Promise<IGetSearch> => {
   try {
     return await instance.get(`/quests/search`);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const GetReview = async (): Promise<IGetReview> => {
+  try {
+    return await instance.get(`/docs/template`);
   } catch (error) {
     throw error;
   }

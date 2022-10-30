@@ -1,8 +1,20 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { GetReview } from "../../api";
+import { IGetReview } from "../../api/response";
 import Week from "../common/Week";
 import ReviewBox from "./ReviewBox";
 
 const Review = () => {
+  const [data, setData] = useState<IGetReview>({
+    is_success: true,
+    content: "",
+  });
+
+  useEffect(() => {
+    GetReview().then(res => setData(res));
+  }, []);
+
   return (
     <Wrapper>
       <CreateWrapper>
@@ -12,7 +24,7 @@ const Review = () => {
         <Week />
       </WeekWrapper>
       <ReviewWrapper>
-        <ReviewBox />
+        <ReviewBox content={data.content} is_success={data.is_success} />
       </ReviewWrapper>
     </Wrapper>
   );
