@@ -6,6 +6,7 @@ import RecommenListPage from "./pages/quest/RecommenListPage";
 import RankingPage from "./pages/ranking/RankingPage";
 import SearchPage from "./pages/search/SearchPage";
 import AchievementPage from "./pages/achievement/AchievementPage";
+import ReviewPage from "./pages/review/ReviewPage";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path='/ranking' element={<RankingPage />} />
         <Route path='/setting' element={<SettingPage />} />
         <Route path='/achievement' element={<AchievementPage />} />
+        <Route path='/review' element={<ReviewPage />} />
       </Routes>
     </BrowserRouter>
   );
