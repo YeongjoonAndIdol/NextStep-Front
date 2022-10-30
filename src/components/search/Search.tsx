@@ -1,11 +1,24 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { IGetSearch } from "../../api/response";
 import magnifier from "../../assets/imgs/common/magnifier.svg";
-import SearchBox from "./SearchBox";
+import { GetSearch } from "../../api";
+import onHeart from "../../assets/imgs/quest/onHeart.svg";
+import offHeart from "../../assets/imgs/quest/offHeart.svg";
 
 const Search = () => {
   const [onFocus, setOnFocus] = useState<boolean>(false);
-  const [onHistory, setOnHistory] = useState<boolean>(false);
+  const [inputContent, setInputContent] = useState<string>("");
+  const [data, setData] = useState<IGetSearch>({
+    quests: [
+      {
+        id: "",
+        quests_name: "",
+        is_liked: false,
+        like_count: 0,
+      },
+    ],
+  });
 
   const HandleFocusInput = () => {
     setOnFocus(!onFocus);
@@ -13,6 +26,12 @@ const Search = () => {
 
   const HandleBlurInput = () => {
     setOnFocus(!onFocus);
+  };
+
+  const fetch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setInputContent(value);
+    GetSearch(value).then(res => setData(res));
   };
 
   return (
@@ -24,19 +43,26 @@ const Search = () => {
           placeholder={onFocus ? "" : "검색하실 언어를 입력해주세요."}
           onFocus={HandleFocusInput}
           onBlur={HandleBlurInput}
+          value={inputContent}
+          onChange={fetch}
         />
         <img src={onFocus ? `${magnifier}` : ``} alt='' />
       </InputDiv>
       <Body>
-        {onHistory ? (
-          <div className='OnHistory'>
-            <SearchBox />
-          </div>
-        ) : (
-          <div className='OffHistory'>
-            <p>검색하신 기록이 없습니다.</p>
-          </div>
-        )}
+        {data &&
+          data.quests.map(quest => (
+            <SearchBox>
+              <QuestName>{quest.quests_name}</QuestName>
+              <HeartBox>
+                <img
+                  id='heart'
+                  src={quest.is_liked ? onHeart : offHeart}
+                  alt='heartBtn'
+                />
+                <LikeCount>{quest.like_count}</LikeCount>
+              </HeartBox>
+            </SearchBox>
+          ))}
       </Body>
     </Wrapper>
   );
@@ -91,6 +117,39 @@ const Body = styled.div`
       font-weight: 590;
     }
   }
+`;
+
+const SearchBox = styled.div`
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+`;
+
+const QuestName = styled.div`
+  color: ${({ theme }) => theme.color.bg_color_off};
+  font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+  font-weight: 590;
+  padding-left: 30px;
+`;
+
+const HeartBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  > img {
+    width: 24px;
+    height: 24px;
+    padding-right: 18px;
+  }
+`;
+
+const LikeCount = styled.div`
+  color: ${({ theme }) => theme.color.bg_color_off};
+  font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+  font-weight: 590;
+  padding-right: 34px;
 `;
 
 export default Search;

@@ -5,17 +5,17 @@ import { QuestList } from "../../../../api/response";
 
 const RecommenBox = ({ id, is_liked, like_count, quest_name }: QuestList) => {
   return (
-    <Wrapper>
-      <QuestName>Next Step 운영자 하루 루틴</QuestName>
+    <SearchBox>
+      <QuestName>{quest_name}</QuestName>
       <HeartBox>
-        <img id='heart' src={onHeart} alt='heartBtn' />
-        <LikeCount>512</LikeCount>
+        <img id='heart' src={is_liked ? onHeart : offHeart} alt='heartBtn' />
+        <LikeCount>{like_count}</LikeCount>
       </HeartBox>
-    </Wrapper>
+    </SearchBox>
   );
 };
 
-const Wrapper = styled.div`
+const SearchBox = styled.div`
   width: 100%;
   height: 56px;
   display: flex;

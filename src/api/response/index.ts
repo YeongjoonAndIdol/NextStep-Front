@@ -61,13 +61,15 @@ export interface IGetAchievement {
   completed_quests: MyAchievement[];
 }
 
+export interface SearchQuests {
+  id: string;
+  quests_name: string;
+  is_liked: boolean;
+  like_count: number;
+}
+
 export interface IGetSearch {
-  quests: [
-    {
-      id: string;
-      name: string;
-    }
-  ];
+  quests: SearchQuests[];
 }
 
 export interface IGetReview {

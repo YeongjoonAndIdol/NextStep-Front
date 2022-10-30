@@ -49,9 +49,9 @@ export const GetRecommendList = async (): Promise<IGetRecommendList> => {
   }
 };
 
-export const Search = async (): Promise<IGetSearch> => {
+export const GetSearch = async (name: string): Promise<IGetSearch> => {
   try {
-    return await instance.get(`/quests/search`);
+    return await instance.get(`/quests/search?name=${name}`);
   } catch (error) {
     throw error;
   }
