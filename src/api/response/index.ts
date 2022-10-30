@@ -1,17 +1,17 @@
 export interface IGetRanking {
-  userRanking: [
-    {
-      id: string;
-      name: string;
-      ranking: number;
-      level: number;
-    }
-  ];
+  userRanking: GetRanking[];
   my_ranking: {
     name: string;
     ranking: number;
     level: number;
   };
+}
+
+export interface GetRanking {
+  id: string;
+  name: string;
+  ranking: number;
+  level: number;
 }
 
 export interface MyRoutin {

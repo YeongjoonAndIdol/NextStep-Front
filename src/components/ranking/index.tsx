@@ -1,8 +1,16 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { GetRanking } from "../../api";
+import { IGetRanking } from "../../api/response";
 import RankingList from "./RankingList";
 
 const Ranking = () => {
+  const [data, setData] = useState<IGetRanking>();
+
+  useEffect(() => {
+    GetRanking().then(res => setData(res));
+  }, []);
+
   return (
     <Wrapper>
       <Header>
@@ -13,7 +21,19 @@ const Ranking = () => {
           <p id='level'>레벨</p>
         </div>
       </Header>
-      <RankingList />
+      <MyRankingWrapper>
+        <p id='ranking'>{data?.my_ranking.ranking}</p>
+        <p id='name'>{data?.my_ranking.name}</p>
+        <p id='level'>{data?.my_ranking.level}Lv.</p>
+      </MyRankingWrapper>
+      {data?.userRanking.map(data => (
+        <RankingList
+          id={data.id}
+          level={data.level}
+          name={data.name}
+          ranking={data.ranking}
+        />
+      ))}
     </Wrapper>
   );
 };
@@ -50,6 +70,32 @@ const Header = styled.div`
       font-weight: 400;
       color: ${({ theme }) => theme.color.gray_color3};
     }
+  }
+`;
+
+// MyRanking Style
+const MyRankingWrapper = styled.div`
+  width: 100%;
+  height: 54px;
+  background-color: ${({ theme }) => theme.color.main};
+  display: flex;
+  align-items: center;
+  #ranking {
+    padding: 0 25px 0 18px;
+    font-size: ${({ theme }) => theme.font_size.SF_Pro14};
+    font-weight: 590;
+    color: ${({ theme }) => theme.color.bg_color_on};
+  }
+  #name {
+    padding-right: 226px;
+    font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+    font-weight: 590;
+    color: ${({ theme }) => theme.color.bg_color_on};
+  }
+  #level {
+    font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+    font-weight: 590;
+    color: ${({ theme }) => theme.color.bg_color_on};
   }
 `;
 
