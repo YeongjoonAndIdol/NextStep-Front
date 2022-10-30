@@ -49,16 +49,16 @@ export interface IGetRecommendList {
   recomend_quest: QuestList[];
 }
 
+export interface MyAchievement {
+  type: string;
+  title: string;
+  content: string;
+  exp: number;
+}
+
 export interface IGetAchievement {
   week_achievement: [week: boolean];
-  completed_quests: [
-    {
-      type: string;
-      title: string;
-      content: string;
-      exp: number;
-    }
-  ];
+  completed_quests: MyAchievement[];
 }
 
 export interface IGetSearch {
