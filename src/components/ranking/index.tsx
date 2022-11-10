@@ -1,15 +1,12 @@
-import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { GetRanking } from "../../api";
-import { IGetRanking } from "../../api/response";
 import RankingList from "./RankingList";
 
 const Ranking = () => {
-  const [data, setData] = useState<IGetRanking>();
-
+  /*
   useEffect(() => {
     GetRanking().then(res => setData(res));
   }, []);
+*/
 
   return (
     <Wrapper>
@@ -22,18 +19,11 @@ const Ranking = () => {
         </div>
       </Header>
       <MyRankingWrapper>
-        <p id='ranking'>{data?.my_ranking.ranking}</p>
-        <p id='name'>{data?.my_ranking.name}</p>
-        <p id='level'>{data?.my_ranking.level}Lv.</p>
+        <p id='ranking'>5</p>
+        <p id='name'>전영준</p>
+        <p id='level'>50Lv.</p>
       </MyRankingWrapper>
-      {data?.userRanking.map(data => (
-        <RankingList
-          id={data.id}
-          level={data.level}
-          name={data.name}
-          ranking={data.ranking}
-        />
-      ))}
+      <RankingList />
     </Wrapper>
   );
 };

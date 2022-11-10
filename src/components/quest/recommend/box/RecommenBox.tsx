@@ -3,13 +3,17 @@ import onHeart from "../../../../assets/imgs/quest/onHeart.svg";
 import offHeart from "../../../../assets/imgs/quest/offHeart.svg";
 import { QuestList } from "../../../../api/response";
 
-const RecommenBox = ({ id, is_liked, like_count, quest_name }: QuestList) => {
+interface Props {
+  onClick: () => void;
+}
+
+const RecommenBox = ({ onClick }: Props) => {
   return (
-    <SearchBox>
-      <QuestName>{quest_name}</QuestName>
+    <SearchBox onClick={onClick}>
+      <QuestName>서울대생의 하루 루틴</QuestName>
       <HeartBox>
-        <img id='heart' src={is_liked ? onHeart : offHeart} alt='heartBtn' />
-        <LikeCount>{like_count}</LikeCount>
+        <img id='heart' src={offHeart} alt='heartBtn' />
+        <LikeCount>100</LikeCount>
       </HeartBox>
     </SearchBox>
   );

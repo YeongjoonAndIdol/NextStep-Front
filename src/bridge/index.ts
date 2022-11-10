@@ -1,30 +1,9 @@
-type BridgeType = "navigate" | "send" | "error";
-
-interface BridgeSendData extends Record<BridgeType, unknown> {
-  navigate: {
-    url: string;
-    title: string;
-  };
-  send: string;
-  error: {
-    message: string;
-  };
-}
+type BridgeType = "navigate";
 
 export interface BrowserActionParameters<T> {
   bridge: BridgeType;
   data: T;
 }
-
-export const sendBridge = <T extends BridgeType>(
-  event: T,
-  data: BridgeSendData[T]
-) => {
-  const windowThis = window as any;
-  if (isMobile.iOS()) {
-    windowThis.webkit.messageHandlers[event](data);
-  }
-};
 
 export const outLink = (link: string) => {
   const windowThis = window as any;
