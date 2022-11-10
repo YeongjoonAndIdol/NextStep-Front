@@ -31,9 +31,11 @@ const Settings = () => {
           <p id='restart'>튜토리얼 재진행</p>
           <p id='start'>시작</p>
         </TutorialDiv>
-        <LogOutDiv>
-          <p onClick={onClickLogOut}>로그아웃</p>
-        </LogOutDiv>
+        <LogOutWrapper>
+          <LogOutDiv>
+            <p onClick={onClickLogOut}>로그아웃</p>
+          </LogOutDiv>
+        </LogOutWrapper>
       </MenuWrapper>
     </Wrapper>
   );
@@ -116,6 +118,10 @@ const TutorialDiv = styled.div`
     font-weight: 400;
     color: ${({ theme }) => theme.color.bg_color_off};
   }
+`;
+
+const LogOutWrapper = styled.div`
+  padding-top: 280px;
 `;
 
 const LogOutDiv = styled.div`

@@ -11,9 +11,11 @@ const Review = () => {
     content: "",
   });
 
+  /*
   useEffect(() => {
     GetReview().then(res => setData(res));
   }, []);
+*/
 
   return (
     <Wrapper>
