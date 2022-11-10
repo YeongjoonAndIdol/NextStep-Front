@@ -12,8 +12,8 @@ const RecommenBox = ({ onClick }: Props) => {
     <SearchBox onClick={onClick}>
       <QuestName>서울대생의 하루 루틴</QuestName>
       <HeartBox>
-        <img id='heart' src={offHeart} alt='heartBtn' />
-        <LikeCount>100</LikeCount>
+        <img id='heart' src={onHeart} alt='heartBtn' />
+        <LikeCount>200</LikeCount>
       </HeartBox>
     </SearchBox>
   );
