@@ -1,42 +1,18 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
 import Week from "../common/Week";
 import AchievementBox from "./AchievementBox";
-import { Category } from "../../interface/category";
-import { IGetAchievement } from "../../api/response";
-import { GetAchievement } from "../../api";
 
 const Achievement = () => {
-  const [data, setData] = useState<IGetAchievement>({
-    week_achievement: [true],
-    completed_quests: [
-      {
-        type: "",
-        title: "",
-        content: "",
-        exp: 0,
-      },
-    ],
-  });
-
-  useEffect(() => {
-    GetAchievement().then(res => setData(res));
-  }, []);
-
   return (
     <Wrapper>
       <WeekDiv>
         <Week />
       </WeekDiv>
+      <QuestName>서울대생의 하루 루틴</QuestName>
       <LogDiv>
-        {data.completed_quests.map(data => (
-          <AchievementBox
-            content={data.content}
-            exp={data.exp}
-            title={data.title}
-            type={data.type}
-          />
-        ))}
+        <AchievementBox />
+        <AchievementBox />
+        <AchievementBox />
       </LogDiv>
     </Wrapper>
   );
@@ -44,6 +20,11 @@ const Achievement = () => {
 
 const Wrapper = styled.div`
   padding: 0 31px;
+`;
+
+const QuestName = styled.p`
+  font-size: ${({ theme }) => theme.font_size.SF_Pro16};
+  color: ${({ theme }) => theme.color.main};
 `;
 
 const WeekDiv = styled.div`

@@ -1,13 +1,10 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { Category } from "../../interface/category";
 import book from "../../assets/imgs/Achievement/book.svg";
 import brain from "../../assets/imgs/Achievement/brain.svg";
 import health from "../../assets/imgs/Achievement/health.svg";
 import mountain from "../../assets/imgs/Achievement/mountain.svg";
 import pencil from "../../assets/imgs/Achievement/pencil.svg";
 import watch from "../../assets/imgs/Achievement/watch.svg";
-import { MyAchievement } from "../../api/response";
 
 const typeState = {
   SPORT: "운동",
@@ -36,7 +33,7 @@ const imgState = {
   ENVIRONMENT: `${mountain}`,
 } as const;
 
-const AchievementBox = ({ content, exp, title, type }: MyAchievement) => {
+const AchievementBox = () => {
   const boxType = typeState["STUDY"];
   const boxColor = colorState["STUDY"];
   const boxImg = imgState["STUDY"];
@@ -50,13 +47,16 @@ const AchievementBox = ({ content, exp, title, type }: MyAchievement) => {
           <p>{boxType}</p>
         </ContentHeader>
         <TitleDiv>
-          <p>{title}</p>
+          <p>수학 문제 풀기</p>
         </TitleDiv>
         <Content>
-          <p>{content}</p>
+          <p>
+            기본적으로 수학에 대한 지식이 풍부해지고, 모자란 창의성과 유연한
+            사고, 다양성과 순발력을 키워주는 효과가 강합니다.
+          </p>
         </Content>
         <ExpDiv>
-          <p>+ {exp} EXP</p>
+          <p>+ 100 EXP</p>
         </ExpDiv>
       </ContentDiv>
     </Wrapper>
@@ -65,6 +65,7 @@ const AchievementBox = ({ content, exp, title, type }: MyAchievement) => {
 
 const Wrapper = styled.div`
   display: flex;
+  padding-bottom: 20px;
   gap: 10px;
 `;
 

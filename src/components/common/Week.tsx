@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import grayCheck from "../../assets/imgs/Achievement/grayCheck.svg";
 import redCheck from "../../assets/imgs/Achievement/redCheck.svg";
-import yelloCheck from "../../assets/imgs/Achievement/yelloCheck.svg";
+import yelloCheck from "../../assets/imgs/Achievement/yellowCheck.svg";
 import { useRecoilState } from "recoil";
 import { WeekState } from "../../store/atom";
 import { useState } from "react";
@@ -11,30 +11,32 @@ const weekData = {
     {
       week: "월",
       value: "MON",
+      check: false,
     },
     {
       week: "화",
       value: "TUE",
+      check: false,
     },
     {
       week: "수",
       value: "WED",
+      check: false,
     },
     {
       week: "목",
       value: "THU",
+      check: false,
     },
     {
       week: "금",
       value: "FRI",
+      check: false,
     },
     {
       week: "토",
       value: "SAT",
-    },
-    {
-      week: "일",
-      value: "SUN",
+      check: true,
     },
   ],
 };
@@ -59,9 +61,16 @@ const Week = () => {
           >
             {data.week}
           </WeekName>
-          <img src={grayCheck} alt='checkbox' />
+          <img
+            src={data.check ? `${yelloCheck}` : `${grayCheck}`}
+            alt='checkbox'
+          />
         </WeekBox>
       ))}
+      <WeekBox>
+        <WeekName state={true}>일</WeekName>
+        <img src={redCheck} alt='checkbox' />
+      </WeekBox>
     </Wrapper>
   );
 };

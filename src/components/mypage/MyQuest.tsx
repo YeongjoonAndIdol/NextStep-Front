@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import menu from "../../assets/imgs/common/menu.svg";
 import { MyRoutin } from "../../api/response/index";
+import { outLink } from "../../bridge";
 
 const MyQuest = ({ id, routin_name }: MyRoutin) => {
+  const menuClick = () => {
+    outLink("menu");
+  };
+
   return (
     <Wrapper>
       <p>{routin_name}</p>
-      <img src={menu} alt='*' />
+      <img onClick={menuClick} src={menu} alt='*' />
     </Wrapper>
   );
 };

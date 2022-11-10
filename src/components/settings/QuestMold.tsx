@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import onHeart from "../../assets/imgs/quest/onHeart.svg";
 import point from "../../assets/imgs/common/point.svg";
-import { LikedQuest } from "../../api/response";
 
-const QuestMold = ({ liked_name, id }: LikedQuest) => {
+const QuestMold = () => {
   return (
     <Wrapper>
       <div className='textDiv'>
         <img id='point' src={point} alt='*' />
-        <p id='text'>{liked_name}</p>
+        <p id='text'>서울대생의 하루 루틴</p>
       </div>
       <img id='heart' src={onHeart} alt='Heart' />
     </Wrapper>

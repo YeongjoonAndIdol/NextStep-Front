@@ -9,15 +9,15 @@ import { outLink } from "../../bridge";
 
 const MyPage = () => {
   const [data, setData] = useState<IGetMyPage>({
-    name: "",
-    level: 0,
+    name: "전영준",
+    level: 50,
     exp: 0,
-    walk_count: 1000,
-    ranking: 0,
+    walk_count: 1,
+    ranking: 5,
     my_routin: [
       {
         id: "",
-        routin_name: "",
+        routin_name: "서울대생의 하루 루틴",
       },
     ],
   });
@@ -50,9 +50,9 @@ const MyPage = () => {
         <MyLevelDiv>
           <p id='level'>Lv.{data.level}</p>
           <LevelParting>|</LevelParting>
-          <p id='exp'>{data.level}</p>
+          <p id='exp'>30</p>
           <ExpParting>/</ExpParting>
-          <p id='exp'>100</p>
+          <p id='exp'>1000</p>
         </MyLevelDiv>
       </MyInformation>
       <HR />
