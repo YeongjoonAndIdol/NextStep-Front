@@ -1,24 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { IGetSearch } from "../../api/response";
 import magnifier from "../../assets/imgs/common/magnifier.svg";
 import { GetSearch } from "../../api";
-import onHeart from "../../assets/imgs/quest/onHeart.svg";
-import offHeart from "../../assets/imgs/quest/offHeart.svg";
 
 const Search = () => {
   const [onFocus, setOnFocus] = useState<boolean>(false);
-  const [inputContent, setInputContent] = useState<string>("");
-  const [data, setData] = useState<IGetSearch>({
-    quests: [
-      {
-        id: "",
-        quests_name: "",
-        is_liked: false,
-        like_count: 0,
-      },
-    ],
-  });
 
   const HandleFocusInput = () => {
     setOnFocus(!onFocus);
@@ -26,12 +12,6 @@ const Search = () => {
 
   const HandleBlurInput = () => {
     setOnFocus(!onFocus);
-  };
-
-  const fetch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setInputContent(value);
-    GetSearch(value).then(res => setData(res));
   };
 
   return (
@@ -43,26 +23,17 @@ const Search = () => {
           placeholder={onFocus ? "" : "검색하실 언어를 입력해주세요."}
           onFocus={HandleFocusInput}
           onBlur={HandleBlurInput}
-          value={inputContent}
-          onChange={fetch}
         />
         <img src={onFocus ? `${magnifier}` : ``} alt='' />
       </InputDiv>
       <Body>
-        {data &&
-          data.quests.map(quest => (
-            <SearchBox>
-              <QuestName>{quest.quests_name}</QuestName>
-              <HeartBox>
-                <img
-                  id='heart'
-                  src={quest.is_liked ? onHeart : offHeart}
-                  alt='heartBtn'
-                />
-                <LikeCount>{quest.like_count}</LikeCount>
-              </HeartBox>
-            </SearchBox>
-          ))}
+        {onFocus ? (
+          <div className='OnHistory'></div>
+        ) : (
+          <div className='OffHistory'>
+            <p>검색하신 기록이 없습니다.</p>
+          </div>
+        )}
       </Body>
     </Wrapper>
   );
@@ -80,7 +51,7 @@ const InputDiv = styled.div`
   padding-top: 25px;
   > img {
     position: fixed;
-    top: 10px;
+    top: 35px;
     right: 25px;
     z-index: 99;
   }
