@@ -6,6 +6,7 @@ import setting from "../../assets/imgs/mypage/setting.svg";
 import news from "../../assets/imgs/mypage/news.svg";
 import baseball from "../../assets/imgs/mypage/baseball.svg";
 import MyQuest from "./MyQuest";
+import { useNavigate } from "react-router-dom";
 
 const MyPage = () => {
   const [data, setData] = useState<IGetMyPage>({
@@ -22,17 +23,25 @@ const MyPage = () => {
     ],
   });
 
+  const navigate = useNavigate();
+
+  const onClickNavigate = () => {
+    navigate("/setting");
+  };
+
+  /*
   useEffect(() => {
     GetMyPage().then(res => {
       setData(res);
     });
   }, []);
+  */
 
   return (
     <Wrapper>
       <Header>
         <p>마이페이지</p>
-        <img src={setting} alt='setting' />
+        <img onClick={onClickNavigate} src={setting} alt='setting' />
       </Header>
       <MyInformation>
         <div className='UserName'>{data.name}님,</div>

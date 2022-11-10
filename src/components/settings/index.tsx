@@ -10,10 +10,11 @@ const Settings = () => {
     liked_quest: [{ id: "", liked_name: "" }],
   });
 
+  /*
   useEffect(() => {
     GetMySetting().then(res => setData(res));
   }, []);
-
+*/
   return (
     <Wrapper>
       <MenuWrapper>
