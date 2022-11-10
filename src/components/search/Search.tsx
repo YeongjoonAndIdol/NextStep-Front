@@ -77,6 +77,7 @@ const Wrapper = styled.div`
 const InputDiv = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 25px;
   > img {
     position: fixed;
     top: 10px;

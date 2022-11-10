@@ -5,36 +5,29 @@ import bronze from "../../assets/imgs/ranking/bronze.svg";
 import { GetRanking } from "../../api/response";
 
 const RankingList = () => {
-  const UserData = [
-    { ranking: 1, name: "김대희", level: 200 },
-    { ranking: 2, name: "장석연", level: 150 },
-    { ranking: 3, name: "이준서", level: 100 },
-    { ranking: 4, name: "손재민", level: 75 },
-  ];
-
   return (
     <Wrapper>
       <TopRankingWrapper>
         <TopRanking>
           <img src={gold} alt='gold' />
-          <p id='name'></p>
-          <p id='level'>Lv.</p>
+          <p id='name'>김대희</p>
+          <p id='level'>250Lv.</p>
         </TopRanking>
         <TopRanking>
           <img src={silver} alt='silver' />
-          <p id='name'></p>
-          <p id='level'>Lv.</p>
+          <p id='name'>장석연</p>
+          <p id='level'>200Lv.</p>
         </TopRanking>
         <TopRanking>
           <img src={bronze} alt='bronze' />
-          <p id='name'></p>
-          <p id='level'>Lv.</p>
+          <p id='name'>이준서</p>
+          <p id='level'>150Lv.</p>
         </TopRanking>
       </TopRankingWrapper>
       <RankingWrapper>
-        <p id='ranking'>등</p>
-        <p id='name'></p>
-        <p id='level'>Lv.</p>
+        <p id='ranking'>4등</p>
+        <p id='name'>손재민</p>
+        <p id='level'>100Lv.</p>
       </RankingWrapper>
     </Wrapper>
   );

@@ -42,14 +42,14 @@ const Header = styled.div`
     display: flex;
     #ranking {
       margin: 0;
-      padding: 0 28px 0 30px;
+      padding: 0 40px 0 30px;
       font-size: ${({ theme }) => theme.font_size.SF_Pro12};
       font-weight: 400;
       color: ${({ theme }) => theme.color.gray_color3};
     }
     #name {
       margin: 0;
-      padding-right: 248px;
+      padding-right: 250px;
       font-size: ${({ theme }) => theme.font_size.SF_Pro12};
       font-weight: 400;
       color: ${({ theme }) => theme.color.gray_color3};
@@ -71,13 +71,14 @@ const MyRankingWrapper = styled.div`
   display: flex;
   align-items: center;
   #ranking {
-    padding: 0 25px 0 18px;
+    padding: 0 25px 0 35px;
     font-size: ${({ theme }) => theme.font_size.SF_Pro14};
     font-weight: 590;
     color: ${({ theme }) => theme.color.bg_color_on};
   }
   #name {
-    padding-right: 226px;
+    padding-left: 10px;
+    padding-right: 236px;
     font-size: ${({ theme }) => theme.font_size.SF_Pro16};
     font-weight: 590;
     color: ${({ theme }) => theme.color.bg_color_on};
