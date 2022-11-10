@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IGetMyPage } from "../../api/response/index";
-import { GetMyPage } from "../../api/index";
 import setting from "../../assets/imgs/mypage/setting.svg";
 import news from "../../assets/imgs/mypage/news.svg";
 import baseball from "../../assets/imgs/mypage/baseball.svg";
 import MyQuest from "./MyQuest";
-import { useNavigate } from "react-router-dom";
+import { outLink } from "../../bridge";
 
 const MyPage = () => {
   const [data, setData] = useState<IGetMyPage>({
@@ -23,10 +22,8 @@ const MyPage = () => {
     ],
   });
 
-  const navigate = useNavigate();
-
   const onClickNavigate = () => {
-    navigate("/setting");
+    outLink("navigate");
   };
 
   /*
