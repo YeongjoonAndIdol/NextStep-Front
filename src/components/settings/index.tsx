@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import QuestMold from "./QuestMold";
-import { outLink } from "../../bridge";
+import { logOutLink, outLink } from "../../bridge";
 
 const Settings = () => {
   /*
@@ -10,7 +10,7 @@ const Settings = () => {
 */
 
   const onClickLogOut = () => {
-    outLink("LogOut");
+    logOutLink("LogOut");
   };
 
   return (
@@ -121,9 +121,7 @@ const TutorialDiv = styled.div`
   }
 `;
 
-const LogOutWrapper = styled.div`
-  padding-top: 280px;
-`;
+const LogOutWrapper = styled.div``;
 
 const LogOutDiv = styled.div`
   width: 340px;
