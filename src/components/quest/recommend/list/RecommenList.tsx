@@ -35,42 +35,42 @@ const RecommenList = () => {
           </HeartBox>
         </SearchBox>
         <SearchBox>
-          <QuestName>충북대생의 운동 루틴</QuestName>
+          <QuestName>NextStep 개발자의 하루 루틴</QuestName>
           <HeartBox>
             <img id='heart' src={offHeart} alt='heartBtn' />
             <LikeCount>259</LikeCount>
           </HeartBox>
         </SearchBox>
         <SearchBox>
-          <QuestName>충남대생의 공부 루틴</QuestName>
+          <QuestName>오늘부터 나도 갬성충 독서 루틴</QuestName>
           <HeartBox>
             <img id='heart' src={offHeart} alt='heartBtn' />
             <LikeCount>332</LikeCount>
           </HeartBox>
         </SearchBox>
         <SearchBox>
-          <QuestName>호서대생의 공부 루틴</QuestName>
+          <QuestName>건물주 되고 싶은 들들 이거 하삼</QuestName>
           <HeartBox>
             <img id='heart' src={offHeart} alt='heartBtn' />
             <LikeCount>323</LikeCount>
           </HeartBox>
         </SearchBox>
         <SearchBox>
-          <QuestName>인하대생의 하루 루틴</QuestName>
+          <QuestName>하루 30분 다이어트</QuestName>
           <HeartBox>
             <img id='heart' src={offHeart} alt='heartBtn' />
             <LikeCount>459</LikeCount>
           </HeartBox>
         </SearchBox>
         <SearchBox>
-          <QuestName>kbs기자의 성공 하루 루틴</QuestName>
+          <QuestName>k본부 기자의 재벌 성공 루틴</QuestName>
           <HeartBox>
             <img id='heart' src={offHeart} alt='heartBtn' />
             <LikeCount>589</LikeCount>
           </HeartBox>
         </SearchBox>
         <SearchBox>
-          <QuestName>경찰관의 기초 체력 루틴</QuestName>
+          <QuestName>유산소 싫어님의 기초 체력 루틴</QuestName>
           <HeartBox>
             <img id='heart' src={offHeart} alt='heartBtn' />
             <LikeCount>700</LikeCount>
