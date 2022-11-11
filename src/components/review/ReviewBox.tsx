@@ -7,7 +7,7 @@ const ReviewBox = ({ content, is_success }: IGetReview) => {
     <Wrapper>
       <HeaderWrapper isSuccess={is_success}>
         <div>
-          <p id='date'>2022.9.15 (목)</p>
+          <p id='date'>2022.11.05 (토)</p>
           <p id='clear'>{is_success ? "성공" : "실패"}</p>
         </div>
         <img src={menu} alt='menu' />

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import gold from "../../assets/imgs/ranking/gold.svg";
 import silver from "../../assets/imgs/ranking/silver.svg";
 import bronze from "../../assets/imgs/ranking/bronze.svg";
-import { GetRanking } from "../../api/response";
 
 const RankingList = () => {
   return (
