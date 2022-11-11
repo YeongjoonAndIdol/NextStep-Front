@@ -27,6 +27,17 @@ export const logOutLink = (link: string) => {
   }
 };
 
+export const editOutLink = (link: string) => {
+  const windowThis = window as any;
+  if (isMobile.any()) {
+    if (isMobile.Android()) {
+      windowThis.android.bridge.outLink(link);
+    } else if (isMobile.iOS()) {
+      windowThis.webkit.messageHandlers.editOutLink.postMessage(link);
+    }
+  }
+};
+
 export const isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i) == null ? false : true;

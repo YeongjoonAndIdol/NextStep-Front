@@ -5,7 +5,7 @@ import setting from "../../assets/imgs/mypage/setting.svg";
 import news from "../../assets/imgs/mypage/news.svg";
 import baseball from "../../assets/imgs/mypage/baseball.svg";
 import MyQuest from "./MyQuest";
-import { outLink } from "../../bridge";
+import { editOutLink } from "../../bridge";
 
 const MyPage = () => {
   const [data, setData] = useState<IGetMyPage>({
@@ -23,7 +23,7 @@ const MyPage = () => {
   });
 
   const onClickNavigate = () => {
-    outLink("navigate");
+    editOutLink("navigate");
   };
 
   /*

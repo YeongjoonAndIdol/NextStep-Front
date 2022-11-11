@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import QuestMold from "./QuestMold";
-import { logOutLink, outLink } from "../../bridge";
+import { logOutLink } from "../../bridge";
 
 const Settings = () => {
   /*
