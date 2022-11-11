@@ -29,6 +29,7 @@ const QuestName = styled.p`
 
 const WeekDiv = styled.div`
   width: 342px;
+  padding-top: 60px;
   padding-bottom: 38px;
   display: flex;
   justify-content: space-between;
