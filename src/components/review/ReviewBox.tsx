@@ -1,19 +1,33 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { IGetReview } from "../../api/response";
 import menu from "../../assets/imgs/common/menu.svg";
 
-const ReviewBox = ({ content, is_success }: IGetReview) => {
+const ReviewBox = ({ content, is_success, week }: IGetReview) => {
+  const [weekState, setWeekState] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(week);
+    if (week == "토") {
+      setWeekState(true);
+    } else {
+      setWeekState(false);
+    }
+  }, [week]);
+
   return (
     <Wrapper>
       <HeaderWrapper isSuccess={is_success}>
         <div>
-          <p id='date'>2022.11.05 (토)</p>
+          <p id='date'>2022.11.05 ({`${week}`})</p>
           <p id='clear'>{is_success ? "성공" : "실패"}</p>
         </div>
         <img src={menu} alt='menu' />
       </HeaderWrapper>
       <ContentWrapper>
-        <Content>{content}</Content>
+        <Content>
+          {weekState ? content : "아직 퀘스트가 완료 되지 않았습니다."}
+        </Content>
       </ContentWrapper>
     </Wrapper>
   );

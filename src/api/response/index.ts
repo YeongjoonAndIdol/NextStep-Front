@@ -75,4 +75,5 @@ export interface IGetSearch {
 export interface IGetReview {
   is_success: boolean;
   content: string;
+  week: string;
 }

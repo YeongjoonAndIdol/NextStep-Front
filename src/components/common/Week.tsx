@@ -45,9 +45,10 @@ const Week = () => {
   const [state, setState] = useRecoilState(WeekState);
   const [cur, setCur] = useState<number>();
 
-  const onClickWeek = (num: number) => {
-    setState({ ...state });
+  const onClickWeek = (num: number, week: string, check: boolean) => {
     setCur(num);
+    setState({ weekValue: week, checkValue: check });
+    console.log(state);
   };
 
   return (
@@ -57,7 +58,7 @@ const Week = () => {
           <WeekName
             key={data.value}
             state={!((idx + 1) * 10 === cur)}
-            onClick={() => onClickWeek((idx + 1) * 10)}
+            onClick={() => onClickWeek((idx + 1) * 10, data.week, data.check)}
           >
             {data.week}
           </WeekName>
