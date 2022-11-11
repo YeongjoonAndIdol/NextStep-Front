@@ -11,23 +11,43 @@ const RankingList = () => {
         <TopRanking>
           <img src={gold} alt='gold' />
           <p id='name'>김대희</p>
-          <p id='level'>250Lv.</p>
+          <p id='level'>600Lv.</p>
         </TopRanking>
         <TopRanking>
           <img src={silver} alt='silver' />
           <p id='name'>장석연</p>
-          <p id='level'>200Lv.</p>
+          <p id='level'>550Lv.</p>
         </TopRanking>
         <TopRanking>
           <img src={bronze} alt='bronze' />
           <p id='name'>이준서</p>
-          <p id='level'>150Lv.</p>
+          <p id='level'>500Lv.</p>
         </TopRanking>
       </TopRankingWrapper>
       <RankingWrapper>
         <p id='ranking'>4등</p>
         <p id='name'>손재민</p>
-        <p id='level'>100Lv.</p>
+        <p id='level'>450Lv.</p>
+      </RankingWrapper>
+      <RankingWrapper>
+        <p id='ranking'>6등</p>
+        <p id='name'>문정민</p>
+        <p id='level'>300Lv.</p>
+      </RankingWrapper>
+      <RankingWrapper>
+        <p id='ranking'>7등</p>
+        <p id='name'>정대현</p>
+        <p id='level'>250Lv.</p>
+      </RankingWrapper>
+      <RankingWrapper>
+        <p id='ranking'>8등</p>
+        <p id='name'>김범진</p>
+        <p id='level'>245Lv.</p>
+      </RankingWrapper>
+      <RankingWrapper>
+        <p id='ranking'>9등</p>
+        <p id='name'>오상우</p>
+        <p id='level'>231Lv.</p>
       </RankingWrapper>
     </Wrapper>
   );

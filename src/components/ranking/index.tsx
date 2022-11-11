@@ -19,9 +19,9 @@ const Ranking = () => {
         </div>
       </Header>
       <MyRankingWrapper>
-        <p id='ranking'>5</p>
+        <p id='ranking'>5등</p>
         <p id='name'>전영준</p>
-        <p id='level'>50Lv.</p>
+        <p id='level'>400Lv.</p>
       </MyRankingWrapper>
       <RankingList />
     </Wrapper>
@@ -71,14 +71,14 @@ const MyRankingWrapper = styled.div`
   display: flex;
   align-items: center;
   #ranking {
-    padding: 0 25px 0 35px;
+    padding: 0 25px 0 30px;
     font-size: ${({ theme }) => theme.font_size.SF_Pro14};
     font-weight: 590;
     color: ${({ theme }) => theme.color.bg_color_on};
   }
   #name {
-    padding-left: 10px;
-    padding-right: 236px;
+    padding-left: 5px;
+    padding-right: 225px;
     font-size: ${({ theme }) => theme.font_size.SF_Pro16};
     font-weight: 590;
     color: ${({ theme }) => theme.color.bg_color_on};
