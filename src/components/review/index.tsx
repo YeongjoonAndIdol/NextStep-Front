@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { GetReview } from "../../api";
 import { IGetReview } from "../../api/response";
+import { outLink } from "../../bridge";
 import Week from "../common/Week";
 import ReviewBox from "./ReviewBox";
 
@@ -18,10 +19,14 @@ const Review = () => {
   }, []);
 */
 
+  const onClickMake = () => {
+    outLink("make");
+  };
+
   return (
     <Wrapper>
       <CreateWrapper>
-        <p>+ 회고 작성하기</p>
+        <p onClick={onClickMake}>+ 회고 작성하기</p>
       </CreateWrapper>
       <WeekWrapper>
         <Week />
