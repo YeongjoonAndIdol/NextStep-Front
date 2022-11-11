@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Week from "../common/Week";
 import AchievementBox from "./AchievementBox";
+import DermyBox1 from "./DermyBox1";
+import DermyBox2 from "./DermyBox2";
 
 const Achievement = () => {
   return (
@@ -11,8 +13,8 @@ const Achievement = () => {
       <QuestName>서울대생의 하루 루틴</QuestName>
       <LogDiv>
         <AchievementBox />
-        <AchievementBox />
-        <AchievementBox />
+        <DermyBox1 />
+        <DermyBox2 />
       </LogDiv>
     </Wrapper>
   );

@@ -33,10 +33,10 @@ const imgState = {
   ENVIRONMENT: `${mountain}`,
 } as const;
 
-const AchievementBox = () => {
-  const boxType = typeState["SPORT"];
-  const boxColor = colorState["SPORT"];
-  const boxImg = imgState["SPORT"];
+const DermyBox2 = () => {
+  const boxType = typeState["LIFE"];
+  const boxColor = colorState["LIFE"];
+  const boxImg = imgState["LIFE"];
 
   return (
     <Wrapper>
@@ -47,16 +47,16 @@ const AchievementBox = () => {
           <p>{boxType}</p>
         </ContentHeader>
         <TitleDiv>
-          <p>한강 공원 뛰기</p>
+          <p>수학 문제 풀기</p>
         </TitleDiv>
         <Content>
           <p>
-            체지방이 줄고 근육량이 늘면서 체격이 좋아질 뿐만 아니라
-            바이러스로부터 견뎌낼 수 있는 방어 체력이 향상됩니다.
+            기본적으로 수학에 대한 지식이 풍부해지고, 모자란 창의성과 유연한
+            사고, 다양성과 순발력을 키워주는 효과가 강합니다.
           </p>
         </Content>
         <ExpDiv>
-          <p>+ 540 EXP</p>
+          <p>+ 100 EXP</p>
         </ExpDiv>
       </ContentDiv>
     </Wrapper>
@@ -118,4 +118,4 @@ const ExpDiv = styled.div`
   }
 `;
 
-export default AchievementBox;
+export default DermyBox2;

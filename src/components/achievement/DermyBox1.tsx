@@ -33,10 +33,10 @@ const imgState = {
   ENVIRONMENT: `${mountain}`,
 } as const;
 
-const AchievementBox = () => {
-  const boxType = typeState["SPORT"];
-  const boxColor = colorState["SPORT"];
-  const boxImg = imgState["SPORT"];
+const DermyBox1 = () => {
+  const boxType = typeState["HOBBY"];
+  const boxColor = colorState["HOBBY"];
+  const boxImg = imgState["HOBBY"];
 
   return (
     <Wrapper>
@@ -47,16 +47,16 @@ const AchievementBox = () => {
           <p>{boxType}</p>
         </ContentHeader>
         <TitleDiv>
-          <p>한강 공원 뛰기</p>
+          <p>통기타 [첫사랑] 연습하기</p>
         </TitleDiv>
         <Content>
           <p>
-            체지방이 줄고 근육량이 늘면서 체격이 좋아질 뿐만 아니라
-            바이러스로부터 견뎌낼 수 있는 방어 체력이 향상됩니다.
+            하루에 한 번 머리 식힐겸 통기타를 칩니다. 축제 때 멋있는 모습을 보일
+            수 있습니다.
           </p>
         </Content>
         <ExpDiv>
-          <p>+ 540 EXP</p>
+          <p>+ 100 EXP</p>
         </ExpDiv>
       </ContentDiv>
     </Wrapper>
@@ -118,4 +118,4 @@ const ExpDiv = styled.div`
   }
 `;
 
-export default AchievementBox;
+export default DermyBox1;

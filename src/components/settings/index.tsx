@@ -32,8 +32,8 @@ const Settings = () => {
           <p id='start'>시작</p>
         </TutorialDiv>
         <LogOutWrapper>
-          <LogOutDiv>
-            <p onClick={onClickLogOut}>로그아웃</p>
+          <LogOutDiv onClick={onClickLogOut}>
+            <p>로그아웃</p>
           </LogOutDiv>
         </LogOutWrapper>
       </MenuWrapper>
