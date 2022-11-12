@@ -38,6 +38,17 @@ export const editOutLink = (link: string) => {
   }
 };
 
+export const makeOutLink = (link: string) => {
+  const windowThis = window as any;
+  if (isMobile.any()) {
+    if (isMobile.Android()) {
+      windowThis.android.bridge.outLink(link);
+    } else if (isMobile.iOS()) {
+      windowThis.webkit.messageHandlers.makeOutLink.postMessage(link);
+    }
+  }
+};
+
 export const isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i) == null ? false : true;

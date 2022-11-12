@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { GetReview } from "../../api";
 import { IGetReview } from "../../api/response";
-import { outLink } from "../../bridge";
+import { makeOutLink } from "../../bridge";
 import { WeekState } from "../../store/atom";
 import Week from "../common/Week";
 import ReviewBox from "./ReviewBox";
@@ -24,7 +24,7 @@ const Review = () => {
 */
 
   const onClickMake = () => {
-    outLink("make");
+    makeOutLink("make");
   };
 
   return (
