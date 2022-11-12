@@ -29,8 +29,8 @@ const Review = () => {
 
   return (
     <Wrapper>
-      <CreateWrapper>
-        <p onClick={onClickMake}>+ 회고 작성하기</p>
+      <CreateWrapper onClick={onClickMake}>
+        <p>+ 회고 작성하기</p>
       </CreateWrapper>
       <WeekWrapper>
         <Week />
