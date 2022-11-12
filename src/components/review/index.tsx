@@ -24,13 +24,14 @@ const Review = () => {
 */
 
   const onClickMake = () => {
+    console.log("1");
     makeOutLink("make");
   };
 
   return (
     <Wrapper>
-      <CreateWrapper onClick={onClickMake}>
-        <p>+ 회고 작성하기</p>
+      <CreateWrapper>
+        <button onClick={onClickMake}>+ 회고 작성하기</button>
       </CreateWrapper>
       <WeekWrapper>
         <Week />
@@ -56,7 +57,10 @@ const CreateWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-bottom: 36px;
-  > p {
+  > button {
+    border: none;
+    outline: none;
+    background-color: white;
     color: ${({ theme }) => theme.color.main};
     font-weight: 590;
     font-size: ${({ theme }) => theme.font_size.SF_Pro12};
